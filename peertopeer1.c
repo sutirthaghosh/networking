@@ -32,11 +32,16 @@ return(sock);
 }
 
 int main(){
-char address[100],buffer[500];
-int sock_server,sock_client_init,sock_client,already_connected=0;
+char address[100],buffer[5000],user_name[100],b[5000],terminate[]="bye\n";
+uint32_t addr;
+int sock_server,sock_client_init,sock_client,already_connected=0,e;
 struct sockaddr_in servername;
 struct sockaddr_in client;
-
+socklen_t lenght;
+lenght=sizeof(client);
+printf("please press \"x\" to exit...");
+printf("\n enter your name(no space allowed) to start chat : ");
+scanf("%s",user_name);
 sock_server=create_socket(2345);
 
 sock_client_init=socket(PF_INET,SOCK_STREAM,0);
@@ -64,53 +69,68 @@ FD_SET(sock_client_init,&writefdset);
 select(FD_SETSIZE,&readfdset,NULL,NULL,NULL);
 //server to accept connection
 if(FD_ISSET(sock_server,&readfdset)){
-sock_client=accept(sock_server,(struct sockaddr *)NULL ,NULL);
+sock_client=accept(sock_server,(struct sockaddr *)&client,&lenght);
 if(sock_client!=-1)
 already_connected=1;
+addr=client.sin_addr.s_addr;
+printf("%d\n",addr);
 FD_SET(sock_client,&readfdset);
 FD_SET(sock_client,&writefdset);
 }
 //if connected and data available then read
 
 if(already_connected==1 && FD_ISSET(sock_client,&readfdset)){
-//memset(buffer,'\0',sizeof(buffer));
 read(sock_client,buffer,sizeof(buffer));
-printf(ANSI_COLOR_RED "\nRECEIVED: %s "ANSI_COLOR_RESET "\n",buffer);
+if(strcmp(buffer,terminate)==0){
+    printf("seems ur friend has gone off line.........");
+            break;
+        }
+printf(ANSI_COLOR_RED"%s"ANSI_COLOR_RESET ,buffer);
 }
 
 if((already_connected==2) && FD_ISSET(sock_client_init,&readfdset) ){
-//printf("sock_client_init");
-memset(buffer,'\0',sizeof(buffer));
 read(sock_client_init,buffer,sizeof(buffer));
-printf(ANSI_COLOR_RED "\nRECEIVED: %s " ANSI_COLOR_RESET "\n",buffer);
+if(strcmp(buffer,terminate)==0){
+    printf("seems ur friend has gone off line.........");
+    break;
+        }
+printf(ANSI_COLOR_YELLOW"%s"ANSI_COLOR_RESET ,buffer);
 }
 
-// if input available in stdin then use already_connected connection or try connect to server
 if(FD_ISSET(0,&readfdset)){
-memset(buffer,'\0',sizeof(buffer));
-//printf("stdin entry\n");
-read(0,buffer,sizeof(buffer));
-    if (already_connected==0){
-       // printf("attempt to connect to server\n");
-        connect(sock_client_init,(struct sockaddr *)&servername,(socklen_t)sizeof(servername));
-        FD_SET(sock_client_init,&readfdset);
-        FD_SET(sock_client_init,&writefdset);
-        already_connected=2;
-    }
-    if(already_connected==1 &&FD_ISSET(sock_client,&writefdset)){
-        write(sock_client,buffer,strlen(buffer)+1);
+    memset(b,'\0',sizeof(b));
+    memset(buffer,'\0',sizeof(buffer));
+    read(0,b,sizeof(b));
+    strcat(buffer,user_name);
+    strcat(buffer," : ");
+    strcat(buffer,b);
+    if(strcmp(b,terminate)==0){
+    printf("OK terminating all connections.........");
+    memset(buffer,'\0',sizeof(buffer));
+    strcpy(buffer,terminate);
         }
-    if(already_connected==2 && FD_ISSET(sock_client_init,&writefdset)){
-       // printf("write socket_client_init \n");
+    if (already_connected==0){
+            connect(sock_client_init,(struct sockaddr *)&servername,(socklen_t)sizeof(servername));
+            FD_SET(sock_client_init,&readfdset);
+            FD_SET(sock_client_init,&writefdset);
+            already_connected=2;
+        }
+    if(already_connected==1){
+            write(sock_client,buffer,strlen(buffer)+1);
+        }
+    if(already_connected==2 ){
        write(sock_client_init,buffer,strlen(buffer)+1);
        }
+       if(strcmp(b,terminate)==0)
+        break;
     }
 }
 
 
-close(sock_server);
+shutdown(sock_server,2);
 if(already_connected==1)
-close(sock_client);
+shutdown(sock_client,2);
 if(already_connected==2)
-close(sock_client_init);
+shutdown(sock_client_init,2);
+printf("done ,see u soon....\n designed by ..Sutirtha Ghosh.........\n");
 return 0;}
