@@ -37,6 +37,9 @@ uint32_t addr;
 int sock_server,sock_client_init,sock_client,already_connected=0,e;
 struct sockaddr_in servername;
 struct sockaddr_in client;
+struct sockaddr_in x;
+socklen_t y=sizeof(x);
+char ca[100];
 socklen_t lenght;
 lenght=sizeof(client);
 printf("please press \"x\" to exit...");
@@ -73,7 +76,9 @@ sock_client=accept(sock_server,(struct sockaddr *)&client,&lenght);
 if(sock_client!=-1)
 already_connected=1;
 addr=client.sin_addr.s_addr;
-printf("%d\n",addr);
+getsockname(sock_client,(struct sockaddr*)&x,&y);
+inet_ntop(AF_INET,&(x.sin_addr),ca,&y);
+printf("%s\n has established a connection to you...",ca);
 FD_SET(sock_client,&readfdset);
 FD_SET(sock_client,&writefdset);
 }
@@ -85,7 +90,7 @@ if(strcmp(buffer,terminate)==0){
     printf("seems ur friend has gone off line.........");
             break;
         }
-printf(ANSI_COLOR_RED"%s"ANSI_COLOR_RESET ,buffer);
+printf(ANSI_COLOR_RED"%s"ANSI_COLOR_RESET"\n",buffer);
 }
 
 if((already_connected==2) && FD_ISSET(sock_client_init,&readfdset) ){
@@ -94,7 +99,7 @@ if(strcmp(buffer,terminate)==0){
     printf("seems ur friend has gone off line.........");
     break;
         }
-printf(ANSI_COLOR_YELLOW"%s"ANSI_COLOR_RESET ,buffer);
+printf(ANSI_COLOR_YELLOW"%s"ANSI_COLOR_RESET"\n",buffer);
 }
 
 if(FD_ISSET(0,&readfdset)){
