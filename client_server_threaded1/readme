@@ -1,0 +1,2 @@
+the server is used just to relay messages 
+2 or more clients can group chat since all messages received from client is broadcasted by the server to all other client except the sender 

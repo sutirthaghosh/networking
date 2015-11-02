@@ -1,0 +1,82 @@
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<netdb.h>
+#include<stdio.h>
+#include<string.h>
+int main(){
+
+FILE *f;
+f= fopen("testfile","rb");
+char buffer[512];
+size_t bsize;
+char x[100],ch;
+int list,comm;
+struct sockaddr_in serv;
+
+list=socket(AF_INET,SOCK_STREAM,0);
+
+bzero(&serv,sizeof(serv));
+serv.sin_family=AF_INET;
+serv.sin_addr.s_addr=htons(INADDR_ANY);
+serv.sin_port=htons(22000);
+
+
+bind(list,(struct sockaddr *)&serv,sizeof(serv));
+
+listen(list,10);
+
+comm=accept(list,(struct sockaddr*)NULL,NULL);
+printf("type upload to client \n");
+bsize=fread(buffer,sizeof(char),512,f);
+scanf("%s",x);
+
+if(strcmp(x,"upload")==0)
+while(bsize!=0){
+write(comm,buffer,bsize);
+printf("sending 512 bytes");
+bsize=fread(buffer,sizeof(char),512,f);
+}  
+
+printf("transfer complete.............");
+return(0);
+}
+
+
+#include<sys/types.h>
+#include<sys/types.h>
+#include<netdb.h>
+#include<stdio.h>
+#include<string.h>
+int main(){
+int sock_fd,n;
+char sendline[100];
+char recvline[100];
+char buffer[512];
+char choice[500];
+size_t size;
+struct sockaddr_in servaddr;
+FILE *fp;
+sock_fd=socket(AF_INET,SOCK_STREAM,0);
+
+bzero(&servaddr,sizeof(servaddr));
+
+servaddr.sin_family=AF_INET;
+servaddr.sin_port=htons(22000);
+inet_pton(AF_INET,"127.0.0.1",&(servaddr.sin_addr));
+
+connect(sock_fd,(struct sockaddr*)&servaddr,sizeof(servaddr));
+fp=fopen("downloadfile","wb");
+
+while(1){
+
+size=read(sock_fd,buffer,512);
+fwrite(buffer,sizeof(char),size,fp);
+printf("received %d bytes",size);
+if(size<512)
+break;
+}
+
+
+return(0);
+
+}

@@ -1,0 +1,1202 @@
+it@it-OptiPlex-755:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:1e:4f:b6:02:8b  
+          inet addr:172.16.8.207  Bcast:172.16.9.255  Mask:255.255.254.0
+          inet6 addr: fe80::21e:4fff:feb6:28b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:7229 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:488 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:914705 (914.7 KB)  TX bytes:49520 (49.5 KB)
+          Interrupt:21 Memory:fe9e0000-fea00000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:217 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:217 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:15786 (15.7 KB)  TX bytes:15786 (15.7 KB)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         172.16.8.1      0.0.0.0         UG    0      0        0 eth0
+link-local      *               255.255.0.0     U     1000   0        0 eth0
+172.16.8.0      *               255.255.254.0   U     1      0        0 eth0
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 localhost:44764         localhost:domain        ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  13     [ ]         DGRAM                    9287     /dev/log
+unix  3      [ ]         STREAM     CONNECTED     16699    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     15782    
+unix  3      [ ]         STREAM     CONNECTED     15544    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     16489    
+unix  3      [ ]         STREAM     CONNECTED     16487    @/tmp/.ICE-unix/1944
+unix  3      [ ]         STREAM     CONNECTED     15535    
+unix  3      [ ]         STREAM     CONNECTED     16484    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     15534    
+unix  3      [ ]         STREAM     CONNECTED     15533    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     15532    
+unix  3      [ ]         STREAM     CONNECTED     15530    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     15529    
+unix  3      [ ]         STREAM     CONNECTED     14241    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     15188    
+unix  3      [ ]         STREAM     CONNECTED     14223    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     15164    
+unix  2      [ ]         STREAM     CONNECTED     13933    
+unix  3      [ ]         STREAM     CONNECTED     14593    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13830    
+unix  3      [ ]         STREAM     CONNECTED     13828    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14592    
+unix  3      [ ]         STREAM     CONNECTED     13827    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13826    
+unix  3      [ ]         STREAM     CONNECTED     14529    
+unix  3      [ ]         STREAM     CONNECTED     14528    
+unix  3      [ ]         STREAM     CONNECTED     13669    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13668    
+unix  3      [ ]         STREAM     CONNECTED     13667    @/tmp/.ICE-unix/1944
+unix  3      [ ]         STREAM     CONNECTED     14520    
+unix  3      [ ]         STREAM     CONNECTED     14519    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13666    
+unix  3      [ ]         STREAM     CONNECTED     13663    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     13662    
+unix  3      [ ]         STREAM     CONNECTED     14518    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14517    
+unix  3      [ ]         STREAM     CONNECTED     14499    /tmp/keyring-gXyDjI/pkcs11
+unix  3      [ ]         STREAM     CONNECTED     13641    
+unix  3      [ ]         STREAM     CONNECTED     13640    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14498    
+unix  3      [ ]         STREAM     CONNECTED     14495    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13639    
+unix  3      [ ]         STREAM     CONNECTED     13625    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13624    
+unix  3      [ ]         STREAM     CONNECTED     14469    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14468    
+unix  3      [ ]         STREAM     CONNECTED     14465    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13612    
+unix  3      [ ]         STREAM     CONNECTED     14462    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13611    
+unix  3      [ ]         STREAM     CONNECTED     14460    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13607    
+unix  3      [ ]         STREAM     CONNECTED     13601    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13600    
+unix  3      [ ]         STREAM     CONNECTED     14444    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13585    
+unix  3      [ ]         STREAM     CONNECTED     14441    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13584    
+unix  3      [ ]         STREAM     CONNECTED     14440    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14438    
+unix  3      [ ]         STREAM     CONNECTED     14439    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14437    
+unix  3      [ ]         STREAM     CONNECTED     13583    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13582    
+unix  3      [ ]         STREAM     CONNECTED     14396    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     14395    
+unix  3      [ ]         STREAM     CONNECTED     14394    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13552    
+unix  3      [ ]         STREAM     CONNECTED     13550    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     13549    
+unix  3      [ ]         STREAM     CONNECTED     14393    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     14392    
+unix  3      [ ]         STREAM     CONNECTED     14338    
+unix  3      [ ]         STREAM     CONNECTED     14337    
+unix  3      [ ]         STREAM     CONNECTED     13491    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13312    
+unix  3      [ ]         STREAM     CONNECTED     13305    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13490    
+unix  3      [ ]         STREAM     CONNECTED     13468    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13467    
+unix  3      [ ]         STREAM     CONNECTED     13295    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13294    
+unix  3      [ ]         STREAM     CONNECTED     13464    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13293    
+unix  3      [ ]         STREAM     CONNECTED     13463    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13462    
+unix  3      [ ]         STREAM     CONNECTED     13457    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13456    
+unix  3      [ ]         STREAM     CONNECTED     13291    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13455    
+unix  3      [ ]         STREAM     CONNECTED     13289    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     13288    
+unix  3      [ ]         STREAM     CONNECTED     13454    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13453    
+unix  3      [ ]         STREAM     CONNECTED     13447    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13241    
+unix  3      [ ]         STREAM     CONNECTED     13445    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13444    
+unix  2      [ ]         DGRAM                    13443    
+unix  3      [ ]         STREAM     CONNECTED     13232    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13231    
+unix  3      [ ]         STREAM     CONNECTED     13438    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13437    
+unix  3      [ ]         STREAM     CONNECTED     13225    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13436    
+unix  3      [ ]         STREAM     CONNECTED     13221    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13430    
+unix  3      [ ]         STREAM     CONNECTED     13216    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13215    
+unix  3      [ ]         STREAM     CONNECTED     13211    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     13426    
+unix  3      [ ]         STREAM     CONNECTED     13425    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13208    
+unix  3      [ ]         STREAM     CONNECTED     13419    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13167    
+unix  3      [ ]         STREAM     CONNECTED     13166    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13418    
+unix  3      [ ]         STREAM     CONNECTED     13163    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13162    
+unix  3      [ ]         STREAM     CONNECTED     13383    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     13161    
+unix  3      [ ]         STREAM     CONNECTED     13147    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13324    
+unix  3      [ ]         STREAM     CONNECTED     12279    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12278    
+unix  3      [ ]         STREAM     CONNECTED     12277    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13144    
+unix  3      [ ]         STREAM     CONNECTED     13092    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13091    
+unix  3      [ ]         STREAM     CONNECTED     12266    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13090    
+unix  3      [ ]         STREAM     CONNECTED     13085    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13084    
+unix  3      [ ]         STREAM     CONNECTED     12265    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13079    
+unix  3      [ ]         STREAM     CONNECTED     13076    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12264    
+unix  3      [ ]         STREAM     CONNECTED     12262    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12261    
+unix  3      [ ]         STREAM     CONNECTED     12258    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12257    
+unix  3      [ ]         STREAM     CONNECTED     12256    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12255    
+unix  3      [ ]         STREAM     CONNECTED     12251    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12250    
+unix  3      [ ]         STREAM     CONNECTED     12247    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12246    
+unix  3      [ ]         STREAM     CONNECTED     12245    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12244    
+unix  3      [ ]         STREAM     CONNECTED     12243    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12242    
+unix  3      [ ]         STREAM     CONNECTED     12239    /tmp/keyring-gXyDjI/pkcs11
+unix  3      [ ]         STREAM     CONNECTED     12238    
+unix  3      [ ]         STREAM     CONNECTED     12237    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13074    
+unix  3      [ ]         STREAM     CONNECTED     12236    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12235    
+unix  3      [ ]         STREAM     CONNECTED     13070    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     13069    
+unix  3      [ ]         STREAM     CONNECTED     13067    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12234    
+unix  3      [ ]         STREAM     CONNECTED     12219    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     13031    
+unix  3      [ ]         STREAM     CONNECTED     13030    /home/it/.pulse/d36587e3e1bf683f64a3d23e0000000f-runtime/native
+unix  3      [ ]         STREAM     CONNECTED     13029    
+unix  3      [ ]         STREAM     CONNECTED     13006    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13005    
+unix  3      [ ]         STREAM     CONNECTED     13002    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     13000    
+unix  3      [ ]         STREAM     CONNECTED     13001    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12999    
+unix  3      [ ]         STREAM     CONNECTED     12207    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12206    
+unix  3      [ ]         STREAM     CONNECTED     12995    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12203    
+unix  3      [ ]         STREAM     CONNECTED     12198    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12993    
+unix  3      [ ]         STREAM     CONNECTED     12197    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12196    
+unix  3      [ ]         STREAM     CONNECTED     12175    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12174    
+unix  3      [ ]         STREAM     CONNECTED     12166    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12165    
+unix  3      [ ]         STREAM     CONNECTED     12164    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12163    
+unix  3      [ ]         STREAM     CONNECTED     12162    @/tmp/.ICE-unix/1944
+unix  3      [ ]         STREAM     CONNECTED     12161    
+unix  3      [ ]         STREAM     CONNECTED     12158    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12983    
+unix  3      [ ]         STREAM     CONNECTED     12157    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12156    
+unix  3      [ ]         STREAM     CONNECTED     12148    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12147    
+unix  3      [ ]         STREAM     CONNECTED     12144    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12143    
+unix  3      [ ]         STREAM     CONNECTED     12118    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12968    
+unix  3      [ ]         STREAM     CONNECTED     12964    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12088    
+unix  3      [ ]         STREAM     CONNECTED     12963    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12084    
+unix  3      [ ]         STREAM     CONNECTED     12083    @/dbus-vfs-daemon/socket-UwiyLJ74
+unix  3      [ ]         STREAM     CONNECTED     12082    
+unix  3      [ ]         STREAM     CONNECTED     12081    @/dbus-vfs-daemon/socket-Qn8HsGog
+unix  3      [ ]         STREAM     CONNECTED     12080    
+unix  3      [ ]         STREAM     CONNECTED     12063    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12955    
+unix  3      [ ]         STREAM     CONNECTED     12935    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12934    
+unix  3      [ ]         STREAM     CONNECTED     12932    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12032    
+unix  3      [ ]         STREAM     CONNECTED     12929    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12031    
+unix  3      [ ]         STREAM     CONNECTED     12021    @/dbus-vfs-daemon/socket-jKhY5edJ
+unix  3      [ ]         STREAM     CONNECTED     12020    
+unix  3      [ ]         STREAM     CONNECTED     12019    @/dbus-vfs-daemon/socket-ePnTvmuy
+unix  3      [ ]         STREAM     CONNECTED     12018    
+unix  3      [ ]         STREAM     CONNECTED     12882    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12002    
+unix  3      [ ]         STREAM     CONNECTED     11993    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12876    
+unix  3      [ ]         STREAM     CONNECTED     11990    @/dbus-vfs-daemon/socket-Aj8ctb7p
+unix  3      [ ]         STREAM     CONNECTED     12875    
+unix  3      [ ]         STREAM     CONNECTED     11989    @/dbus-vfs-daemon/socket-9teADpJJ
+unix  3      [ ]         STREAM     CONNECTED     12874    
+unix  3      [ ]         STREAM     CONNECTED     12870    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11986    
+unix  3      [ ]         STREAM     CONNECTED     12869    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11985    
+unix  3      [ ]         STREAM     CONNECTED     12868    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11984    
+unix  3      [ ]         STREAM     CONNECTED     11976    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11975    
+unix  3      [ ]         STREAM     CONNECTED     12849    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12848    
+unix  3      [ ]         STREAM     CONNECTED     11974    @/dbus-vfs-daemon/socket-bETtRflG
+unix  3      [ ]         STREAM     CONNECTED     11973    
+unix  3      [ ]         STREAM     CONNECTED     11972    @/dbus-vfs-daemon/socket-HqEq0VQK
+unix  3      [ ]         STREAM     CONNECTED     11971    
+unix  3      [ ]         STREAM     CONNECTED     11966    @/dbus-vfs-daemon/socket-rFtHo4wh
+unix  3      [ ]         STREAM     CONNECTED     12847    
+unix  3      [ ]         STREAM     CONNECTED     11965    @/dbus-vfs-daemon/socket-FzJ5jnMX
+unix  3      [ ]         STREAM     CONNECTED     12846    
+unix  3      [ ]         STREAM     CONNECTED     12840    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11964    
+unix  3      [ ]         STREAM     CONNECTED     11962    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12839    
+unix  3      [ ]         STREAM     CONNECTED     11946    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12838    
+unix  3      [ ]         STREAM     CONNECTED     11937    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12832    
+unix  3      [ ]         STREAM     CONNECTED     11936    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12831    
+unix  3      [ ]         STREAM     CONNECTED     11935    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11934    
+unix  3      [ ]         STREAM     CONNECTED     11931    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11930    
+unix  3      [ ]         STREAM     CONNECTED     11896    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12828    
+unix  3      [ ]         STREAM     CONNECTED     11889    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11888    
+unix  3      [ ]         STREAM     CONNECTED     11886    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12827    
+unix  3      [ ]         STREAM     CONNECTED     12826    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12825    
+unix  3      [ ]         STREAM     CONNECTED     11884    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11883    
+unix  3      [ ]         STREAM     CONNECTED     11879    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12821    
+unix  3      [ ]         STREAM     CONNECTED     11878    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12818    
+unix  3      [ ]         STREAM     CONNECTED     12815    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     11877    
+unix  3      [ ]         STREAM     CONNECTED     11869    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12804    
+unix  3      [ ]         STREAM     CONNECTED     11866    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12800    
+unix  3      [ ]         STREAM     CONNECTED     11851    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     11850    
+unix  3      [ ]         STREAM     CONNECTED     11849    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12792    
+unix  3      [ ]         STREAM     CONNECTED     11848    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     11847    
+unix  3      [ ]         STREAM     CONNECTED     11843    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11842    
+unix  3      [ ]         STREAM     CONNECTED     12790    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11841    
+unix  3      [ ]         STREAM     CONNECTED     12789    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11840    
+unix  3      [ ]         STREAM     CONNECTED     12787    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12786    
+unix  3      [ ]         STREAM     CONNECTED     11838    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11837    
+unix  3      [ ]         STREAM     CONNECTED     12764    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11836    
+unix  3      [ ]         STREAM     CONNECTED     12763    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12762    
+unix  3      [ ]         STREAM     CONNECTED     12760    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11833    
+unix  3      [ ]         STREAM     CONNECTED     12756    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12755    
+unix  3      [ ]         STREAM     CONNECTED     12754    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12753    
+unix  3      [ ]         STREAM     CONNECTED     12751    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12750    
+unix  2      [ ]         DGRAM                    12724    
+unix  3      [ ]         STREAM     CONNECTED     11804    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12720    
+unix  3      [ ]         STREAM     CONNECTED     12719    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12718    
+unix  3      [ ]         STREAM     CONNECTED     12716    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12715    
+unix  3      [ ]         STREAM     CONNECTED     11763    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11762    
+unix  3      [ ]         STREAM     CONNECTED     12709    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12708    
+unix  3      [ ]         STREAM     CONNECTED     12687    @/tmp/.ICE-unix/1944
+unix  3      [ ]         STREAM     CONNECTED     12686    
+unix  3      [ ]         STREAM     CONNECTED     11742    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11741    
+unix  3      [ ]         STREAM     CONNECTED     12685    /home/it/.pulse/d36587e3e1bf683f64a3d23e0000000f-runtime/native
+unix  3      [ ]         STREAM     CONNECTED     11740    
+unix  3      [ ]         STREAM     CONNECTED     12681    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11738    
+unix  3      [ ]         STREAM     CONNECTED     11734    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12680    
+unix  3      [ ]         STREAM     CONNECTED     11733    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12679    
+unix  3      [ ]         STREAM     CONNECTED     12676    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11732    
+unix  3      [ ]         STREAM     CONNECTED     12673    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11731    
+unix  3      [ ]         STREAM     CONNECTED     12668    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11727    
+unix  3      [ ]         STREAM     CONNECTED     11723    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12634    
+unix  3      [ ]         STREAM     CONNECTED     11718    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12628    
+unix  3      [ ]         STREAM     CONNECTED     12625    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12624    
+unix  3      [ ]         STREAM     CONNECTED     12616    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12615    
+unix  3      [ ]         STREAM     CONNECTED     12574    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11665    
+unix  3      [ ]         STREAM     CONNECTED     12570    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12569    
+unix  3      [ ]         STREAM     CONNECTED     12567    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12566    
+unix  3      [ ]         STREAM     CONNECTED     12533    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11663    
+unix  3      [ ]         STREAM     CONNECTED     11661    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12529    
+unix  3      [ ]         STREAM     CONNECTED     12528    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     11657    
+unix  3      [ ]         STREAM     CONNECTED     12527    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12526    
+unix  3      [ ]         STREAM     CONNECTED     11650    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11649    
+unix  2      [ ]         DGRAM                    11648    
+unix  3      [ ]         STREAM     CONNECTED     11645    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11644    
+unix  3      [ ]         STREAM     CONNECTED     12524    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12523    
+unix  3      [ ]         STREAM     CONNECTED     11643    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11642    
+unix  3      [ ]         STREAM     CONNECTED     11549    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     12474    
+unix  3      [ ]         STREAM     CONNECTED     12473    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12472    
+unix  3      [ ]         STREAM     CONNECTED     11548    @/tmp/dbus-XIi1kOjAAx
+unix  3      [ ]         STREAM     CONNECTED     11547    
+unix  3      [ ]         STREAM     CONNECTED     12467    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     12466    
+unix  3      [ ]         STREAM     CONNECTED     11546    
+unix  3      [ ]         STREAM     CONNECTED     11545    
+unix  3      [ ]         STREAM     CONNECTED     12458    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11539    
+unix  3      [ ]         STREAM     CONNECTED     11535    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11534    
+unix  3      [ ]         STREAM     CONNECTED     12457    
+unix  3      [ ]         STREAM     CONNECTED     12456    
+unix  3      [ ]         STREAM     CONNECTED     11522    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     11521    
+unix  3      [ ]         STREAM     CONNECTED     11356    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12313    
+unix  2      [ ]         DGRAM                    11307    
+unix  3      [ ]         STREAM     CONNECTED     11299    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     11298    
+unix  2      [ ]         DGRAM                    10232    
+unix  2      [ ]         STREAM     CONNECTED     11134    
+unix  3      [ ]         STREAM     CONNECTED     11133    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10157    
+unix  3      [ ]         STREAM     CONNECTED     11132    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10156    
+unix  2      [ ]         DGRAM                    10114    
+unix  3      [ ]         STREAM     CONNECTED     9969     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     9968     
+unix  2      [ ]         DGRAM                    9967     
+unix  2      [ ]         DGRAM                    10858    
+unix  3      [ ]         STREAM     CONNECTED     10768    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10767    
+unix  3      [ ]         STREAM     CONNECTED     10630    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10629    
+unix  3      [ ]         STREAM     CONNECTED     9769     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10628    
+unix  3      [ ]         STREAM     CONNECTED     9613     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10417    
+unix  3      [ ]         STREAM     CONNECTED     10414    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     9612     
+unix  3      [ ]         STREAM     CONNECTED     9597     @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     10387    
+unix  3      [ ]         STREAM     CONNECTED     10336    /var/run/acpid.socket
+unix  3      [ ]         STREAM     CONNECTED     10335    
+unix  3      [ ]         STREAM     CONNECTED     10334    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10333    
+unix  3      [ ]         STREAM     CONNECTED     9465     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     10332    
+unix  3      [ ]         STREAM     CONNECTED     9404     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     9403     
+unix  3      [ ]         STREAM     CONNECTED     9392     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     8699     
+unix  2      [ ]         DGRAM                    8642     
+unix  2      [ ]         DGRAM                    8533     
+unix  2      [ ]         DGRAM                    8529     
+unix  3      [ ]         STREAM     CONNECTED     9289     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     9286     
+unix  3      [ ]         STREAM     CONNECTED     9263     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     8475     
+unix  3      [ ]         STREAM     CONNECTED     8469     
+unix  3      [ ]         STREAM     CONNECTED     8468     
+unix  3      [ ]         STREAM     CONNECTED     8438     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     8437     
+unix  3      [ ]         STREAM     CONNECTED     8432     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     8431     
+unix  3      [ ]         STREAM     CONNECTED     9240     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     8406     
+unix  3      [ ]         STREAM     CONNECTED     8360     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     9228     
+unix  3      [ ]         STREAM     CONNECTED     8356     /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     8355     
+unix  3      [ ]         STREAM     CONNECTED     7165     
+unix  3      [ ]         STREAM     CONNECTED     7164     
+unix  3      [ ]         STREAM     CONNECTED     7025     @/com/ubuntu/upstart
+unix  3      [ ]         STREAM     CONNECTED     7022     
+unix  3      [ ]         DGRAM                    6650     
+unix  3      [ ]         DGRAM                    6649     
+unix  3      [ ]         STREAM     CONNECTED     7667     @/com/ubuntu/upstart
+unix  3      [ ]         STREAM     CONNECTED     7662     
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 00:1e:4f:b6:02:8b  
+          inet addr:172.16.8.207  Bcast:172.16.9.255  Mask:255.255.254.0
+          inet6 addr: fe80::21e:4fff:feb6:28b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8405 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:578 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1067337 (1.0 MB)  TX bytes:57523 (57.5 KB)
+          Interrupt:21 Memory:fe9e0000-fea00000 
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ ifconfig -a
+eth0      Link encap:Ethernet  HWaddr 00:1e:4f:b6:02:8b  
+          inet addr:172.16.8.207  Bcast:172.16.9.255  Mask:255.255.254.0
+          inet6 addr: fe80::21e:4fff:feb6:28b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8683 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:588 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1103435 (1.1 MB)  TX bytes:58391 (58.3 KB)
+          Interrupt:21 Memory:fe9e0000-fea00000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:267 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:267 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:19531 (19.5 KB)  TX bytes:19531 (19.5 KB)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ ifconfig eth0 172.16.8.220
+SIOCSIFBRDADDR: Permission denied
+SIOCSIFFLAGS: Permission denied
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ ifconfig eth0 broadcast 172.16.8.220
+SIOCSIFBRDADDR: Permission denied
+SIOCSIFFLAGS: Permission denied
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+it@it-OptiPlex-755:~$ ifconfig eth0 netmask 255.255.255.254
+SIOCSIFNETMASK: Permission denied
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+IFCONFIG(8)                Linux Programmer's Manual               IFCONFIG(8)
+
+NAME
+       ifconfig - configure a network interface
+
+SYNOPSIS
+       ifconfig [-v] [-a] [-s] [interface]
+       ifconfig [-v] interface [aftype] options | address ...
+
+DESCRIPTION
+       Ifconfig  is  used to configure the kernel-resident network interfaces.
+       It is used at boot time to set up interfaces as necessary.  After that,
+       it  is  usually  only  needed  when  debugging or when system tuning is
+       needed.
+
+       If no arguments are given, ifconfig displays the  status  of  the  cur‐
+       rently  active interfaces.  If a single interface argument is given, it
+       displays the status of the given interface only; if a single  -a  argu‐
+       ment  is  given,  it  displays the status of all interfaces, even those
+       that are down.  Otherwise, it configures an interface.
+
+Address Families
+       If the first argument after the interface name  is  recognized  as  the
+       name  of  a  supported  address family, that address family is used for
+       decoding and displaying all protocol  addresses.   Currently  supported
+       address  families  include  inet  (TCP/IP, default), inet6 (IPv6), ax25
+       (AMPR Packet Radio), ddp (Appletalk Phase  2),  ipx  (Novell  IPX)  and
+       netrom (AMPR Packet radio).
+
+OPTIONS
+       -a     display  all  interfaces  which are currently available, even if
+              down
+
+       -s     display a short list (like netstat -i)
+
+       -v     be more verbose for some error conditions
+
+       interface
+              The name of the interface.  This is usually a driver  name  fol‐
+              lowed  by a unit number, for example eth0 for the first Ethernet
+              interface. If your kernel supports  alias  interfaces,  you  can
+              specify  them  with  eth0:0 for the first alias of eth0. You can
+              use them to assign a second address. To delete an  alias  inter‐
+              face use ifconfig eth0:0 down.  Note: for every scope (i.e. same
+              net with address/netmask combination) all aliases  are  deleted,
+              if you delete the first (primary).
+
+       up     This  flag  causes the interface to be activated.  It is implic‐
+              itly specified if an address is assigned to the interface.
+
+       down   This flag causes the driver for this interface to be shut down.
+
+       [-]arp Enable or disable the use of the ARP protocol on this interface.
+ 
+       [-]promisc
+              Enable or disable the promiscuous mode  of  the  interface.   If
+              selected,  all  packets  on  the network will be received by the
+              interface.
+
+       [-]allmulti
+              Enable or disable all-multicast mode.  If selected,  all  multi‐
+              cast packets on the network will be received by the interface.
+
+       metric N
+              This parameter sets the interface metric.
+
+       mtu N  This parameter sets the Maximum Transfer Unit (MTU) of an inter‐
+              face.
+
+       dstaddr addr
+              Set the remote IP address for a  point-to-point  link  (such  as
+              PPP).  This keyword is now obsolete; use the pointopoint keyword
+              instead.
+
+       netmask addr
+              Set the IP network mask for this interface.  This value defaults
+              to  the  usual class A, B or C network mask (as derived from the
+              interface IP address), but it can be set to any value.
+
+       add addr/prefixlen
+              Add an IPv6 address to an interface.
+
+       del addr/prefixlen
+              Remove an IPv6 address from an interface.
+
+       tunnel aa.bb.cc.dd
+              Create a new SIT (IPv6-in-IPv4) device, tunnelling to the  given
+              destination.
+
+       irq addr
+              Set the interrupt line used by this device.  Not all devices can
+              dynamically change their IRQ setting.
+
+       io_addr addr
+              Set the start address in I/O space for this device.
+
+       mem_start addr
+              Set the start address for shared memory  used  by  this  device.
+              Only a few devices need this.
+
+       media type
+              Set  the  physical port or medium type to be used by the device.
+              Not all devices can change this setting, and those that can vary
+              in  what  values  they  support.   Typical  values  for type are
+              10base2 (thin Ethernet), 10baseT (twisted-pair 10Mbps Ethernet),
+              AUI  (external  transceiver) and so on.  The special medium type
+              of auto can be used to tell the driver to auto-sense the  media.
+              Again, not all drivers can do this.
+
+       [-]broadcast [addr]
+              If  the  address  argument  is given, set the protocol broadcast
+              address for this  interface.   Otherwise,  set  (or  clear)  the
+              IFF_BROADCAST flag for the interface.
+
+       [-]pointopoint [addr]
+              This  keyword  enables  the point-to-point mode of an interface,
+              meaning that it is a  direct  link  between  two  machines  with
+              nobody else listening on it.
+              If  the address argument is also given, set the protocol address
+              of the other side of the link, just like  the  obsolete  dstaddr
+              keyword  does.  Otherwise, set or clear the IFF_POINTOPOINT flag
+              for the interface.
+
+       hw class address
+              Set the hardware address of this interface, if the device driver
+              supports  this  operation.   The keyword must be followed by the
+              name of the hardware class and the printable ASCII equivalent of
+              the  hardware  address.   Hardware  classes  currently supported
+              include ether (Ethernet), ax25 (AMPR AX.25), ARCnet  and  netrom
+              (AMPR NET/ROM).
+
+       multicast
+              Set  the  multicast  flag on the interface. This should not nor‐
+              mally be needed as the drivers  set  the  flag  correctly  them‐
+              selves.
+
+       address
+              The IP address to be assigned to this interface.
+
+       txqueuelen length
+              Set the length of the transmit queue of the device. It is useful
+              to set this to small values  for  slower  devices  with  a  high
+              latency  (modem links, ISDN) to prevent fast bulk transfers from
+              disturbing interactive traffic like telnet too much.
+
+NOTES
+       Since kernel release 2.2 there are no explicit interface statistics for
+       alias  interfaces  anymore.  The  statistics  printed  for the original
+       address are shared with all alias addresses on the same device. If  you
+       want  per-address  statistics  you should add explicit accounting rules
+       for the address using the ipchains(8) or iptables(8) command.
+  Interrupt problems with Ethernet device drivers fail with EAGAIN (SIOC‐
+       SIIFLAGS:  Resource temporarily unavailable) it is most likely a inter‐
+       rupt conflict.  See  http://www.scyld.com/expert/irq-conflict.html  for
+       more information.
+
+FILES
+       /proc/net/socket
+       /proc/net/dev
+       /proc/net/if_inet6
+
+BUGS
+       While  appletalk DDP and IPX addresses will be displayed they cannot be
+       altered by this command.
+
+SEE ALSO
+       route(8),  netstat(8),  arp(8),  rarp(8),   ipchains(8),   iptables(8),
+       ifup(8), interfaces(5).
+       http://physics.nist.gov/cuu/Units/binary.html  -  Prefixes  for  binary
+       multiples
+
+AUTHORS
+       Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org>
+       Alan Cox, <Alan.Cox@linux.org>
+       Phil Blundell, <Philip.Blundell@pobox.com>
+       Andi Kleen
+       Bernd Eckenfels, <net-tools@lina.inka.de>
+
+net-tools                         2007-12-02                       IFCONFIG(8)
+ Manual page ifconfig(8) line 130/185 (END) (press h for help or q to quit)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+ROUTE(8)                                             Linux Programmer's Manual                                            ROUTE(8)
+
+NAME
+       route - show / manipulate the IP routing table
+
+SYNOPSIS
+       route [-CFvnee]
+
+       route  [-v]  [-A family] add [-net|-host] target [netmask Nm] [gw Gw] [metric N] [mss M] [window W] [irtt I] [reject] [mod]
+              [dyn] [reinstate] [[dev] If]
+
+       route  [-v] [-A family] del [-net|-host] target [gw Gw] [netmask Nm] [metric N] [[dev] If]
+
+       route  [-V] [--version] [-h] [--help]
+
+DESCRIPTION
+       Route manipulates the kernel's IP routing tables.  Its primary use is to set up static routes to specific hosts or networks
+       via an interface after it has been configured with the ifconfig(8) program.
+
+       When the add or del options are used, route modifies the routing tables.  Without these options, route displays the current
+       contents of the routing tables.
+
+OPTIONS
+       -A family
+              use the specified address family (eg `inet'; use `route --help' for a full list).
+
+       -F     operate on the kernel's FIB (Forwarding Information Base) routing table.  This is the default.
+
+       -C     operate on the kernel's routing cache.
+
+       -v     select verbose operation.
+
+       -n     show numerical addresses instead of trying to determine symbolic host names. This is useful if  you  are  trying  to
+              determine why the route to your nameserver has vanished.
+
+       -e     use netstat(8)-format for displaying the routing table.  -ee will generate a very long line with all parameters from
+              the routing table.
+
+       del    delete a route.
+
+       add    add a new route.
+
+       target the destination network or host. You can provide IP addresses in dotted decimal or host/network names.
+
+       -net   the target is a network.
+
+       -host  the target is a host.
+
+       netmask NM
+              when adding a network route, the netmask to be used.
+
+       gw GW  route packets via a gateway.  NOTE: The specified gateway must be reachable first. This usually means that you  have
+              to  set  up a static route to the gateway beforehand. If you specify the address of one of your local interfaces, it
+              will be used to decide about the interface to which the packets should be routed to. This is a BSDism  compatibility
+ metric M
+              set the metric field in the routing table (used by routing daemons) to M.
+
+       mss M  set  the  TCP  Maximum Segment Size (MSS) for connections over this route to M bytes.  The default is the device MTU
+              minus headers, or a lower MTU when path mtu discovery occurred. This setting can be used to force smaller TCP  pack‐
+              ets  on  the  other end when path mtu discovery does not work (usually because of misconfigured firewalls that block
+              ICMP Fragmentation Needed)
+
+       window W
+              set the TCP window size for connections over this route to W bytes. This is typically only used  on  AX.25  networks
+              and with drivers unable to handle back to back frames.
+
+       irtt I set the initial round trip time (irtt) for TCP connections over this route to I milliseconds (1-12000). This is typ‐
+              ically only used on AX.25 networks. If omitted the RFC 1122 default of 300ms is used.
+
+       reject install a blocking route, which will force a route lookup to fail.  This is for example used to  mask  out  networks
+              before using the default route.  This is NOT for firewalling.
+
+       mod, dyn, reinstate
+              install  a dynamic or modified route. These flags are for diagnostic purposes, and are generally only set by routing
+              daemons.
+
+       dev If force the route to be associated with the specified device, as the kernel will otherwise try to determine the device
+              on its own (by checking already existing routes and device specifications, and where the route is added to). In most
+              normal networks you won't need this.
+
+              If dev If is the last option on the command line, the word dev may be omitted, as it's the  default.  Otherwise  the
+              order of the route modifiers (metric - netmask - gw - dev) doesn't matter.
+
+EXAMPLES
+       route add -net 127.0.0.0 netmask 255.0.0.0 dev lo
+              adds  the  normal  loopback entry, using netmask 255.0.0.0 and associated with the "lo" device (assuming this device
+              was previously set up correctly with ifconfig(8)).
+
+       route add -net 192.56.76.0 netmask 255.255.255.0 dev eth0
+              adds a route to the local network 192.56.76.x via "eth0".  The word "dev" can be omitted here.
+
+       route del default
+              deletes the current default route, which is labeled "default" or 0.0.0.0 in the destination  field  of  the  current
+              routing table.
+
+       route add default gw mango-gw
+              adds a default route (which will be used if no other route matches).  All packets using this route will be gatewayed
+              through "mango-gw". The device which will actually be used for that route depends on how we can reach  "mango-gw"  -
+              the static route to "mango-gw" will have to be set up before.
+
+       route add ipx4 sl0
+              Adds the route to the "ipx4" host via the SLIP interface (assuming that "ipx4" is the SLIP host).
+
+       route add -net 192.57.66.0 netmask 255.255.255.0 gw ipx4
+              This command adds the net "192.57.66.x" to be gatewayed through the former route to the SLIP interface.
+   route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0
+              This is an obscure one documented so people know how to do it. This sets all of the class D (multicast) IP routes to
+              go via "eth0". This is the correct normal configuration line with a multicasting kernel.
+
+       route add -net 10.0.0.0 netmask 255.0.0.0 reject
+              This installs a rejecting route for the private network "10.x.x.x."
+
+OUTPUT
+       The output of the kernel routing table is organized in the following columns
+
+       Destination
+              The destination network or destination host.
+
+       Gateway
+              The gateway address or '*' if none set.
+
+       Genmask
+              The netmask for the destination net; '255.255.255.255' for a host destination and '0.0.0.0' for the default route.
+
+       Flags  Possible flags include
+              U (route is up)
+              H (target is a host)
+              G (use gateway)
+              R (reinstate route for dynamic routing)
+              D (dynamically installed by daemon or redirect)
+              M (modified from routing daemon or redirect)
+              A (installed by addrconf)
+              C (cache entry)
+              !  (reject route)
+
+       Metric The 'distance' to the target (usually counted in hops). It is not used by recent kernels, but may be needed by rout‐
+              ing daemons.
+
+       Ref    Number of references to this route. (Not used in the Linux kernel.)
+
+       Use    Count  of  lookups  for the route.  Depending on the use of -F and -C this will be either route cache misses (-F) or
+       Ref    Number of references to this route. (Not used in the Linux kernel.)
+
+       Use    Count  of  lookups  for the route.  Depending on the use of -F and -C this will be either route cache misses (-F) or
+              hits (-C).
+
+       Iface  Interface to which packets for this route will be sent.
+
+       MSS    Default maximum segment size for TCP connections over this route.
+
+       Window Default window size for TCP connections over this route.
+
+       irtt   Initial RTT (Round Trip Time). The kernel uses this to guess about the best TCP protocol parameters without  waiting
+              on (possibly slow) answers.
+
+       HH (cached only)
+              The  number of ARP entries and cached routes that refer to the hardware header cache for the cached route. This will
+              be -1 if a hardware address is not needed for the interface of the cached route (e.g. lo).
+
+       Arp (cached only)
+              Whether or not the hardware address for the cached route is up to date.
+
+FILES
+       /proc/net/ipv6_route
+       /proc/net/route
+       /proc/net/rt_cache
+
+SEE ALSO
+       ifconfig(8), netstat(8), arp(8), rarp(8)
+
+HISTORY
+       Route for Linux was originally written by Fred N.  van Kempen, <waltje@uwalt.nl.mugnet.org> and then modified  by  Johannes
+       Stille  and  Linus  Torvalds  for pl15. Alan Cox added the mss and window options for Linux 1.1.22. irtt support and merged
+       with netstat from Bernd Eckenfels.
+
+AUTHOR
+       Currently maintained by Phil Blundell <Philip.Blundell@pobox.com> and Bernd Eckenfels <net-tools@lina.inka.de>.
+
+net-tools                                                   2007-12-02                                                    ROUTE(8)
+ Manual page route(8) line 141/196 (END) (press h for help or q to quit)
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+NETSTAT(8)                                           Linux Programmer's Manual                                          NETSTAT(8)
+
+NAME
+       netstat  -  Print  network connections, routing tables, interface statistics, masquerade connections, and multicast member‐
+       ships
+
+SYNOPSIS
+       netstat [address_family_options] [--tcp|-t] [--udp|-u] [--raw|-w] [--listening|-l]  [--all|-a]  [--numeric|-n]  [--numeric-
+       hosts]  [--numeric-ports] [--numeric-users] [--symbolic|-N] [--extend|-e[--extend|-e]] [--timers|-o] [--program|-p] [--ver‐
+       bose|-v] [--continuous|-c]
+
+       netstat {--route|-r} [address_family_options] [--extend|-e[--extend|-e]]  [--verbose|-v]  [--numeric|-n]  [--numeric-hosts]
+       [--numeric-ports] [--numeric-users] [--continuous|-c]
+
+       netstat  {--interfaces|-i}  [--all|-a]  [--extend|-e[--extend|-e]] [--verbose|-v] [--program|-p] [--numeric|-n] [--numeric-
+       hosts] [--numeric-ports] [--numeric-users] [--continuous|-c]
+
+       netstat {--groups|-g} [--numeric|-n] [--numeric-hosts] [--numeric-ports] [--numeric-users] [--continuous|-c]
+
+       netstat {--masquerade|-M} [--extend|-e] [--numeric|-n] [--numeric-hosts]  [--numeric-ports]  [--numeric-users]  [--continu‐
+       ous|-c]
+
+       netstat {--statistics|-s} [--tcp|-t] [--udp|-u] [--raw|-w]
+
+       netstat {--version|-V}
+
+       netstat {--help|-h}
+
+       address_family_options:
+
+       [-4] [-6] [--protocol={inet,unix,ipx,ax25,netrom,ddp}[,...]]  [--unix|-x] [--inet|--ip] [--ax25] [--ipx] [--netrom] [--ddp]
+
+DESCRIPTION
+       Netstat  prints  information  about  the  Linux networking subsystem.  The type of information printed is controlled by the
+       first argument, as follows:
+
+   (none)
+       By default, netstat displays a list of open sockets.  If you don't specify any address families, then the active sockets of
+       all configured address families will be printed.
+
+   --route , -r
+       Display  the  kernel routing tables. See the description in route(8) for details.  netstat -r and route -e produce the same
+       output.
+
+   --groups , -g
+       Display multicast group membership information for IPv4 and IPv6.
+
+   --interfaces, -i
+       Display a table of all network interfaces.
+
+   --masquerade , -M
+       Display a list of masqueraded connections.
+
+   --statistics , -s
+OPTIONS
+   --verbose , -v
+       Tell the user what is going on by being verbose. Especially print some useful information about unconfigured address  fami‐
+       lies.
+
+   --wide , -W
+       Do not truncate IP addresses by using output as wide as needed. This is optional for now to not break existing scripts.
+
+   --numeric , -n
+       Show numerical addresses instead of trying to determine symbolic host, port or user names.
+
+   --numeric-hosts
+       shows numerical host addresses but does not affect the resolution of port or user names.
+
+   --numeric-ports
+       shows numerical port numbers but does not affect the resolution of host or user names.
+
+   --numeric-users
+       shows numerical user IDs but does not affect the resolution of host or port names.
+
+   --protocol=family , -A
+       Specifies  the  address  families  (perhaps better described as low level protocols) for which connections are to be shown.
+       family is a comma (',') separated list of address family keywords like inet, unix, ipx, ax25, netrom, and  ddp.   This  has
+       the same effect as using the --inet, --unix (-x), --ipx, --ax25, --netrom, and --ddp options.
+
+       The address family inet includes raw, udp and tcp protocol sockets.
+
+   -c, --continuous
+       This will cause netstat to print the selected information every second continuously.
+
+   -e, --extend
+       Display additional information.  Use this option twice for maximum detail.
+
+   -o, --timers
+       Include information related to networking timers.
+
+   -p, --program
+   
+  OUTPUT
+   Active Internet connections (TCP, UDP, raw)
+   Proto
+       The protocol (tcp, udp, raw) used by the socket.
+
+   Recv-Q
+       The count of bytes not copied by the user program connected to this socket.
+
+   Send-Q
+       The count of bytes not acknowledged by the remote host.
+
+   Local Address
+       Address  and port number of the local end of the socket.  Unless the --numeric (-n) option is specified, the socket address
+       is resolved to its canonical host name (FQDN), and the port number is translated into the corresponding service name.
+
+   Foreign Address
+       Address and port number of the remote end of the socket.  Analogous to "Local Address."
+
+   State
+       The state of the socket. Since there are no states in raw mode and usually no states used in UDP, this column may  be  left
+       blank. Normally this can be one of several values:
+
+       ESTABLISHED
+              The socket has an established connection.
+
+       SYN_SENT
+              The socket is actively attempting to establish a connection.
+
+       SYN_RECV
+              A connection request has been received from the network.
+
+       FIN_WAIT1
+              The socket is closed, and the connection is shutting down.
+
+       FIN_WAIT2
+              Connection is closed, and the socket is waiting for a shutdown from the remote end.
+
+       TIME_WAIT
+              The socket is waiting after close to handle packets still in the network.
+
+       CLOSE  The socket is not being used.
+
+       CLOSE_WAIT
+ LAST_ACK
+              The remote end has shut down, and the socket is closed. Waiting for acknowledgement.
+
+       LISTEN The  socket  is  listening for incoming connections.  Such sockets are not included in the output unless you specify
+              the --listening (-l) or --all (-a) option.
+
+       CLOSING
+              Both sockets are shut down but we still don't have all our data sent.
+
+       UNKNOWN
+              The state of the socket is unknown.
+
+   User
+       The username or the user id (UID) of the owner of the socket.
+
+   PID/Program name
+       Slash-separated pair of the process id (PID) and process name of the process that owns the socket.  --program  causes  this
+       column  to  be  included.   You will also need superuser privileges to see this information on sockets you don't own.  This
+       identification information is not yet available for IPX sockets.
+
+   Timer
+       (this needs to be written)
+
+   Active UNIX domain Sockets
+   Proto
+       The protocol (usually unix) used by the socket.
+
+   RefCnt
+       The reference count (i.e. attached processes via this socket).
+
+   Flags
+       The flags displayed is SO_ACCEPTON (displayed as ACC), SO_WAITDATA (W) or SO_NOSPACE (N).  SO_ACCECPTON is used  on  uncon‐
+       nected sockets if their corresponding processes are waiting for a connect request. The other flags are not of normal inter‐
+       est.
+
+   Type
+       There are several types of socket access:
+
+       SOCK_DGRAM
+              The socket is used in Datagram (connectionless) mode.
+
+       SOCK_STREAM
+              This is a stream (connection) socket.
+
+       SOCK_RAW
+              The socket is used as a raw socket.
+
+       SOCK_RDM
+              This one serves reliably-delivered messages.
+
+       SOCK_SEQPACKET
+              This is a sequential packet socket.
+ State
+       This field will contain one of the following Keywords:
+
+       FREE   The socket is not allocated
+
+       LISTENING
+              The socket is listening for a connection request.  Such sockets are only included in the output if you  specify  the
+              --listening (-l) or --all (-a) option.
+
+       CONNECTING
+              The socket is about to establish a connection.
+
+       CONNECTED
+              The socket is connected.
+
+       DISCONNECTING
+              The socket is disconnecting.
+
+       (empty)
+              The socket is not connected to another one.
+
+       UNKNOWN
+              This state should never happen.
+
+   PID/Program name
+       Process  ID (PID) and process name of the process that has the socket open.  More info available in Active Internet connec‐
+       tions section written above.
+
+   Path
+       This is the path name as which the corresponding processes attached to the socket.
+
+   Active IPX sockets
+       (this needs to be done by somebody who knows it)
+
+   Active NET/ROM sockets
+       (this needs to be done by somebody who knows it)
+
+   Active AX.25 sockets
+       (this needs to be done by somebody who knows it)
+
+NOTES
+       Starting with Linux release 2.2 netstat -i does not show interface statistics for alias interfaces. To get per alias inter‐
+       face counters you need to setup explicit rules using the ipchains(8) command.
+
+FILES
+       /etc/services -- The services translation file
+
+       /proc -- Mount point for the proc filesystem, which gives access to kernel status information via the following files.
+
+       /proc/net/dev -- device information
+
+       /proc/net/raw -- raw socket information
+ /proc/net/ipx -- IPX socket information
+
+       /proc/net/ax25 -- AX25 socket information
+
+       /proc/net/appletalk -- DDP (appletalk) socket information
+
+       /proc/net/nr -- NET/ROM socket information
+
+       /proc/net/route -- IP routing information
+
+       /proc/net/ax25_route -- AX25 routing information
+
+       /proc/net/ipx_route -- IPX routing information
+
+       /proc/net/nr_nodes -- NET/ROM nodelist
+
+       /proc/net/nr_neigh -- NET/ROM neighbours
+
+       /proc/net/ip_masquerade -- masqueraded connections
+
+       /proc/net/snmp -- statistics
+
+SEE ALSO
+       route(8), ifconfig(8), ipchains(8), iptables(8), proc(5)
+
+BUGS
+       Occasionally strange information may appear if a socket changes as it is viewed. This is unlikely to occur.
+
+AUTHORS
+       The  netstat  user  interface was written by Fred Baumgarten <dc6iq@insu1.etec.uni-karlsruhe.de>, the man page basically by
+       Matt Welsh <mdw@tc.cornell.edu>. It was updated by Alan Cox <Alan.Cox@linux.org> but could do with a bit more work.  It was
+       updated again by Tuan Hoang <tqhoang@bigfoot.com>.
+       The man page and the command included in the net-tools package is totally rewritten by Bernd Eckenfels <ecki@linux.de>.
+
+net-tools                                                   2008-11-16                                                  NETSTAT(8)
+
+-------------------------------------------------------------------------------------------------------------------------------
+       Show the PID and name of the program to which each socket belongs.
+
+   -l, --listening
+       Show only listening sockets.  (These are omitted by default.)
+
+   -a, --all
+       Show both listening and non-listening sockets.  With the --interfaces option, show interfaces that are not up
+
+   -F
+       Print routing information from the FIB.  (This is the default.)
+
+   -C
+       Print routing information from the route cache.
+
+OUTPUT
+ Manual page netstat(8) line 59 (press h for help or q to quit)
+
+
+
+
